@@ -1,0 +1,13 @@
+/dev/
+/master/*
+/modules/
+/plugins/
+/secret/
+/servers/*
+/test/
+cache/
+logs/
+
+/waterfall-*.jar
+*.log*
+!.gitkeep

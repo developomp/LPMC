@@ -1,0 +1,4 @@
+[Service]
+ExecStart=/home/ubuntu/LPMC/scripts/start.sh smp
+Restart=on-failure
+WorkingDirectory=/home/ubuntu/LPMC
