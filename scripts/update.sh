@@ -68,7 +68,8 @@ setup_paperMC() {
 			rm $PAPER_SYMLINK_PATH
 		fi
 
-		ln -s "$PAPER_FILE" $PAPER_SYMLINK_PATH
+		# copy paper.jar file
+		cp "$PAPER_FILE" $PAPER_SYMLINK_PATH
 	done
 }
 
