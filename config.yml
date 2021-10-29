@@ -1,3 +1,4 @@
+prevent_proxy_connections: false
 listeners:
   - query_port: 25577
     motd: Llamas!
@@ -30,7 +31,6 @@ log_pings: true
 connection_throttle_limit: 3
 server_connect_timeout: 5000
 timeout: 30000
-stats: b10526d8-1bb0-4b26-94a5-2d0e965917cd
 player_limit: 20
 ip_forward: true
 groups:
@@ -40,7 +40,7 @@ groups:
 remote_ping_timeout: 5000
 connection_throttle: 4000
 log_commands: true
-prevent_proxy_connections: false
+stats: b10526d8-1bb0-4b26-94a5-2d0e965917cd
 online_mode: false
 forge_support: true
 disabled_commands:
