@@ -1,8 +1,57 @@
-# update plugins and shit
+# update plugins and stuff
+
+BOLD=$(tput bold)
+NORMAL=$(tput sgr0)
+
+WORKING_ON="waterfall"
+PLUGINS_DIR="plugins"
+
+WATERFALL_PLUGINS=(
+	"SkinsRestorer"
+)
+LOBBY_SERVER_PLUGINS=(
+	"CoreProtect"
+	"worldEdit"
+	"worldGuard"
+	"HolographicDisplays"
+)
+SMP_SERVER_PLUGINS=(
+	"CoreProtect"
+	"StackMob"
+	"worldEdit"
+	"worldGuard"
+)
+
+bold() {
+	echo "${BOLD}$@${NORMAL}"
+}
+
+installing() {
+	echo "  installing $*"
+}
+
+get_plugins_dir() {
+	case "$WORKING_ON" in
+	waterfall)
+		PLUGINS_DIR="plugins"
+		;;
+
+	lobby)
+		PLUGINS_DIR="servers/lobby/plugins"
+		;;
+
+	smp)
+		PLUGINS_DIR="servers/smp/plugins"
+		;;
+
+	*) ;;
+	esac
+}
+
+### setup functions
 
 setup_paperMC() {
 	# make paper.jar symlink in each server folder
-	echo "setting up paperMC"
 
 	# get the first search result for paper-*.jar
 	PAPER_FILE=$(find master -type f -name "paper-*.jar" | head -n 1)
@@ -23,24 +72,39 @@ setup_paperMC() {
 	done
 }
 
-setup_clearlagg() {
-	# https://dev.bukkit.org/projects/clearlagg/files/latest
-	:
-}
+setup_plugin() {
+	installing "$1"
 
-setup_worldedit() {
-	:
+	# find jar file
+	ORIGINAL_JAR=$(find master -iname $1*.jar)
+	get_plugins_dir
+	NEW_JAR="$PLUGINS_DIR/$1.jar"
+
+	# remove existing plugin symlink
+	rm $NEW_JAR >/dev/null 2>&1
+
+	# create (new) symlink
+	ln -s $ORIGINAL_JAR $NEW_JAR
 }
 
 ### MAIN
 
-# create master directory if it doesn't exist
-if [ ! -d master ]; then
-	mkdir master
-fi
-
-LOBBY_SERVER_PLUGINS=()
-SMP_SERVER_PLUGINS=()
-ANARCHY_SERVER_PLUGINS=()
-
+bold "setting up paperMC"
 setup_paperMC
+
+bold "setting up waterfall plugins"
+for i in "${WATERFALL_PLUGINS[@]}"; do
+	setup_plugin $i
+done
+
+WORKING_ON="lobby"
+bold "setting up lobby plugins"
+for i in "${LOBBY_SERVER_PLUGINS[@]}"; do
+	setup_plugin $i
+done
+
+WORKING_ON="smp"
+bold "setting up smp plugins"
+for i in "${SMP_SERVER_PLUGINS[@]}"; do
+	setup_plugin $i
+done
