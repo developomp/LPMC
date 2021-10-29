@@ -53,10 +53,16 @@ Create systemd files:
 scripts/systemd.sh
 ```
 
-Start/Stop systemd:
+Start/Stop using systemd:
 
 ```
 sudo systemctl <start|stop> <lpmc_waterfall|lpmc_lobby|lpmc_smp>
+```
+
+Start server manually (<kbd>ctrl</kbd>+<kbd>C</kbd> to stop)
+
+```
+scripts/start.sh <waterfall|lobby|smp>
 ```
 
 Update plugins and stuff:
@@ -67,11 +73,10 @@ scripts/update.sh
 
 ## Tools
 
-|             Usage | URL                                                                    |
-| ----------------: | :--------------------------------------------------------------------- |
-|    Editing chunks | https://github.com/Amulet-Team/Amulet-Map-Editor                       |
-| Editing NBT files | https://marketplace.visualstudio.com/items?itemName=Misodee.vscode-nbt |
-|  World inspection | https://github.com/toolbox4minecraft/amidst                            |
+- [Editing chunks](https://github.com/Amulet-Team/Amulet-Map-Editor)
+- [Editing NBT files](https://marketplace.visualstudio.com/items?itemName=Misodee.vscode-nbt)
+- [World inspection](https://github.com/toolbox4minecraft/amidst)
+- [3D model extraction](https://github.com/erich666/Mineways)
 
 ## todo
 
