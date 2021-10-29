@@ -1,4 +1,4 @@
-# LPMC
+# [LPMC](https://github.com/developomp/LPMC)
 
 > **THIS PROJECT IS A WORK IN PROGRESS**
 
@@ -6,58 +6,72 @@
 [![SHELL FORMATTER: SHFMT](https://img.shields.io/badge/shell_formatter-shfmt-darkgrey?style=for-the-badge)](https://github.com/mvdan/sh)
 [![MARKDOWN & YML FORMATTER: PRETTIER](https://img.shields.io/badge/markdown_&_yml_formatter-pretiier-ff69b4?style=for-the-badge)](https://github.com/prettier/prettier)
 
-## Setup
+## Updating
 
-version: 1.17.1
+> **THIS IS NOT A SETUP INSTRUCTION.**
 
-assumptions:
-
+- version: 1.17.1
+- seed: `-4172144997902289642` for all worlds (yeah it's 2b2t seed)
 - platform: ubuntu 20.04 on ARM processor and username set to ubuntu.
-- working directory is project root.
+- working directory is project root (`/home/ubuntu/LPMC`).
 - scripts are executed with user permission and **NOT** with root permission.
+- worlds should already exist in the [servers](./servers) directory.
 
 ### 1. Download waterfall
 
-1. [Download](https://papermc.io/downloads#Waterfall)
-2. Put the .jar file in project root (no need to rename it)
+1. [Download](https://papermc.io/downloads#Waterfall) the latest version of waterfall. (latest version as of writing: 451)
+2. Put it in project root (no need to rename it)
 
 ### 2. Download paper
 
-1. [Download](https://papermc.io/downloads#Paper-1.17)
-2. Put it in [`master`](./master) directory
+1. [Download](https://papermc.io/downloads#Paper-1.17) the latest version of paper version 1.17.1. (latest version as of writing: 353)
+2. Put it in the [`master`](./master) directory.
 
 ### 3. Download plugins
 
-|                                                                                                                Plugin |         Description          | Documentation                                        |
-| --------------------------------------------------------------------------------------------------------------------: | :--------------------------: | :--------------------------------------------------- |
-|                                                            [EssentialsX](https://dev.bukkit.org/projects/essentialsx) |                              | https://essentialsx.net/wiki/Home.html               |
-|                                                                      [Dynmap](https://dev.bukkit.org/projects/dynmap) |                              | https://github.com/webbukkit/dynmap/wiki             |
-|                                                     [Core Protect](https://dev.bukkit.org/projects/coreprotect/files) |   Logging & Anti-griefing    | https://docs.coreprotect.net                         |
-|                                                       [World Guard](https://dev.bukkit.org/projects/worldguard/files) |                              | https://worldguard.enginehub.org/en/latest           |
-|                                    [Holographic Displays](https://dev.bukkit.org/projects/holographic-displays/files) |      Text without signs      | https://filoghost.me/docs/holographic-displays       |
-|                            [Illegal Stack](https://www.spigotmc.org/resources/dupe-fixes-illegal-stack-remover.44411) |   patch dupes and exploits   | https://github.com/dniym/IllegalStack/wiki           |
-|                                                  [Lock Login](https://www.spigotmc.org/resources/gsa-locklogin.75156) |     user authentication      | https://github.com/KarmaConfigs/LockLoginReborn/wiki |
-|                                              [Login Security](https://www.spigotmc.org/resources/loginsecurity.19362) |     user authentication      | https://github.com/lenis0012/LoginSecurity-2/wiki    |
-|                                                    [ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997) |                              | https://github.com/dmulloy2/ProtocolLib/wiki         |
-|                                                [Skin Restorer](https://www.spigotmc.org/resources/skinsrestorer.2124) | skin in offline-mode servers | https://github.com/SkinsRestorer/SkinsRestorerX/wiki |
-| [Stack Mob](https://www.spigotmc.org/resources/stackmob-enhance-your-servers-performance-without-the-sacrifice.29999) |    lower lag due to mobs     |                                                      |
-|                                                                 [Multiple worlds](https://ci.md-5.net/job/BungeeCord) |                              |                                                      |
-|                                              [Server Monitoring](https://www.spigotmc.org/resources/lagmonitor.21348) |                              |                                                      |
-|                                                         [World Edit](https://dev.bukkit.org/projects/worldedit/files) |                              | https://worldedit.enginehub.org/en/latest            |
+- Put them in the [`master`](./master) directory.
 
-### 4. Generat worlds
+|                                                                                                                Plugin | Documentation                                                         |
+| --------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------- |
+|                                                      [EssentialsX](https://dev.bukkit.org/projects/essentialsx/files) | [Documentation](https://essentialsx.net/wiki/Home.html)               |
+|                                                        [DiscordSRV](https://dev.bukkit.org/projects/discordsrv/files) | [Documentation](https://docs.discordsrv.com)                          |
+|                                                     [Core Protect](https://dev.bukkit.org/projects/coreprotect/files) | [Documentation](https://docs.coreprotect.net)                         |
+|                                                       [World Guard](https://dev.bukkit.org/projects/worldguard/files) | [Documentation](https://worldguard.enginehub.org/en/latest)           |
+|                                                         [World Edit](https://dev.bukkit.org/projects/worldedit/files) | [Documentation](https://worldedit.enginehub.org/en/latest)            |
+|                                    [Holographic Displays](https://dev.bukkit.org/projects/holographic-displays/files) | [Documentation](https://filoghost.me/docs/holographic-displays)       |
+|                                                       [Authme](https://dev.bukkit.org/projects/authme-reloaded/files) | [Documentation](https://github.com/AuthMe/AuthMeReloaded/wiki)        |
+|                            [Illegal Stack](https://www.spigotmc.org/resources/dupe-fixes-illegal-stack-remover.44411) | [Documentation](https://github.com/dniym/IllegalStack/wiki)           |
+|                                                    [ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997) | [Documentation](https://github.com/dmulloy2/ProtocolLib/wiki)         |
+|                                                [Skin Restorer](https://www.spigotmc.org/resources/skinsrestorer.2124) | [Documentation](https://github.com/SkinsRestorer/SkinsRestorerX/wiki) |
+| [Stack Mob](https://www.spigotmc.org/resources/stackmob-enhance-your-servers-performance-without-the-sacrifice.29999) |                                                                       |
 
-seed: `-4172144997902289642` for all worlds (yeah it's 2b2t seed)
+## Commands & Scripts
 
-### 5. Start servers
+Create systemd files:
+
+```
+scripts/systemd.sh
+```
+
+Start/Stop systemd:
+
+```
+sudo systemctl <start|stop> <lpmc_waterfall|lpmc_lobby|lpmc_smp>
+```
+
+Update plugins and stuff:
+
+```
+scripts/update.sh
+```
 
 ## Tools
 
-|             Usage | URL                                       |
-| ----------------: | :---------------------------------------- |
-|    Editing chunks | https://github.com/Podshot/MCEdit-Unified |
-| Editing NBT files | https://github.com/jaquadro/NBTExplorer   |
-|     Editing world | https://www.universalminecrafteditor.com  |
+|             Usage | URL                                                                    |
+| ----------------: | :--------------------------------------------------------------------- |
+|    Editing chunks | https://github.com/Amulet-Team/Amulet-Map-Editor                       |
+| Editing NBT files | https://marketplace.visualstudio.com/items?itemName=Misodee.vscode-nbt |
+|  World inspection | https://github.com/toolbox4minecraft/amidst                            |
 
 ## todo
 
