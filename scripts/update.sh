@@ -26,8 +26,8 @@ bold() {
 	echo "${BOLD}$@${NORMAL}"
 }
 
-installing() {
-	echo "  installing $*"
+updating() {
+	echo "  updating $*"
 }
 
 get_plugins_dir() {
@@ -73,7 +73,7 @@ setup_paperMC() {
 }
 
 setup_plugin() {
-	installing "$1"
+	updating "$1"
 
 	# find jar file
 	ORIGINAL_JAR=$(find master -iname $1*.jar)
