@@ -1,4 +1,4 @@
-/dev/
+/_/
 /master/*
 /modules/
 /plugins/
@@ -11,3 +11,6 @@ logs/
 /waterfall-*.jar
 *.log*
 !.gitkeep
+
+config.yml
+modules.yml
