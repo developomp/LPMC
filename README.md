@@ -80,22 +80,13 @@ scripts/update.sh
 
 ## todo
 
-- destruction protection for main server
-  - spawn region
-- no escape from hub chunks
-- plugin for on member join
-- file size monitor
-- player count monitor
-- tps monitor
-- faction to anarchy
-- site
-  - how to join
-  - server guide
-  - screen shots (gallery)
-  - server stat
-    - tps
-    - player per world and total
-    - status (online/offline)
+- make skins work
+- password-protect server (discord integration?)
+- chat bridge
+- rules
+  - no grief
+  - be responsible
+  - break rule = ban
 
 ## Related projects
 
