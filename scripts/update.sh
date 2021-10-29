@@ -85,7 +85,7 @@ setup_plugin() {
 	rm $NEW_JAR >/dev/null 2>&1
 
 	# create (new) symlink
-	ln -s $ORIGINAL_JAR $NEW_JAR
+	cp $ORIGINAL_JAR $NEW_JAR
 }
 
 ### MAIN
