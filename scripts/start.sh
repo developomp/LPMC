@@ -6,7 +6,8 @@ AVAILABLE_OPTIONS=(
 	smp
 )
 
-JAVA=/usr/lib/jvm/java-8-openjdk/bin/java
+# uncomment if you need specific version of java
+# JAVA=/usr/lib/jvm/java-17-openjdk/bin/java
 if [ -z ${JAVA+x} ]; then
 	JAVA=java
 fi
@@ -23,7 +24,15 @@ start_paper() {
 	# $2: RAM
 
 	cd $1
-	echo "$JAVA -Xmx$2 -Xms$2 -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar paper.jar nogui"
+
+	# https://blog.airplane.gg/aikar-flags/#how-to-use-the-flags
+	$JAVA -Xms$2 -Xmx$2 \
+		-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch \
+		-XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 \
+		-XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M \
+		-XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true \
+		-jar paper.jar nogui
+
 }
 
 start_lobby() {
@@ -31,7 +40,7 @@ start_lobby() {
 }
 
 start_smp() {
-	start_paper "servers/smp" "2G"
+	start_paper "servers/smp" "3G"
 }
 
 # check arguments
@@ -55,5 +64,8 @@ lobby)
 
 smp)
 	start_smp
+	;;
+*)
+	echo "unknown option: $1"
 	;;
 esac
