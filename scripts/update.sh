@@ -20,7 +20,6 @@ LOBBY_SERVER_PLUGINS=(
 )
 SMP_SERVER_PLUGINS=(
 	"CoreProtect"
-	"DiscordSRV"
 	"EssentialsX"
 	"IllegalStack"
 	"SkinsRestorer"
