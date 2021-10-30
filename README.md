@@ -39,9 +39,7 @@
 |                                                       [World Guard](https://dev.bukkit.org/projects/worldguard/files) | [Documentation](https://worldguard.enginehub.org/en/latest)           |
 |                                                         [World Edit](https://dev.bukkit.org/projects/worldedit/files) | [Documentation](https://worldedit.enginehub.org/en/latest)            |
 |                                    [Holographic Displays](https://dev.bukkit.org/projects/holographic-displays/files) | [Documentation](https://filoghost.me/docs/holographic-displays)       |
-|                                                       [Authme](https://dev.bukkit.org/projects/authme-reloaded/files) | [Documentation](https://github.com/AuthMe/AuthMeReloaded/wiki)        |
 |                            [Illegal Stack](https://www.spigotmc.org/resources/dupe-fixes-illegal-stack-remover.44411) | [Documentation](https://github.com/dniym/IllegalStack/wiki)           |
-|                                                    [ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997) | [Documentation](https://github.com/dmulloy2/ProtocolLib/wiki)         |
 |                                                [Skin Restorer](https://www.spigotmc.org/resources/skinsrestorer.2124) | [Documentation](https://github.com/SkinsRestorer/SkinsRestorerX/wiki) |
 | [Stack Mob](https://www.spigotmc.org/resources/stackmob-enhance-your-servers-performance-without-the-sacrifice.29999) |                                                                       |
 
@@ -50,7 +48,7 @@
 Create systemd files:
 
 ```
-scripts/systemd.sh
+./scripts/systemd.sh
 ```
 
 Start/Stop using systemd:
@@ -62,13 +60,13 @@ sudo systemctl <start|stop> <lpmc_waterfall|lpmc_lobby|lpmc_smp>
 Start server manually (<kbd>ctrl</kbd>+<kbd>C</kbd> to stop)
 
 ```
-scripts/start.sh <waterfall|lobby|smp>
+./scripts/start.sh <waterfall|lobby|smp>
 ```
 
 Update plugins and stuff:
 
 ```
-scripts/update.sh
+./scripts/update.sh
 ```
 
 ## Tools
@@ -80,9 +78,6 @@ scripts/update.sh
 
 ## todo
 
-- make skins work
-- password-protect server (discord integration?)
-- chat bridge
 - rules
   - no grief
   - be responsible
