@@ -1,1 +1,1 @@
-# make lpmc related systemd services
+cp services/* /etc/systemd/system
