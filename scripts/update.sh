@@ -10,8 +10,8 @@ WATERFALL_PLUGINS=(
 	"SkinsRestorer"
 )
 LOBBY_SERVER_PLUGINS=(
-	"DiscordSRV"
 	"CoreProtect"
+	"DiscordSRV"
 	"EssentialsX"
 	"HolographicDisplays"
 	"SkinsRestorer"
@@ -20,6 +20,7 @@ LOBBY_SERVER_PLUGINS=(
 )
 SMP_SERVER_PLUGINS=(
 	"CoreProtect"
+	"DiscordSRV"
 	"EssentialsX"
 	"IllegalStack"
 	"SkinsRestorer"
