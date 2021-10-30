@@ -11,12 +11,17 @@ WATERFALL_PLUGINS=(
 )
 LOBBY_SERVER_PLUGINS=(
 	"CoreProtect"
+	"EssentialsX"
+	"HolographicDisplays"
+	"SkinsRestorer"
 	"worldEdit"
 	"worldGuard"
-	"HolographicDisplays"
 )
 SMP_SERVER_PLUGINS=(
 	"CoreProtect"
+	"EssentialsX"
+	"IllegalStack"
+	"SkinsRestorer"
 	"StackMob"
 	"worldEdit"
 	"worldGuard"
