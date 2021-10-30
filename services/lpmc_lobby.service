@@ -1,4 +1,4 @@
 [Service]
-ExecStart=/home/ubuntu/LPMC/scripts/start.sh lobby
+ExecStart=bash /home/ubuntu/LPMC/scripts/start.sh lobby
 Restart=on-failure
 WorkingDirectory=/home/ubuntu/LPMC
