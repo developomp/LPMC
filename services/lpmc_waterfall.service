@@ -1,4 +1,4 @@
 [Service]
-ExecStart=/home/ubuntu/LPMC/scripts/start.sh waterfall
+ExecStart=bash /home/ubuntu/LPMC/scripts/start.sh waterfall
 Restart=on-failure
 WorkingDirectory=/home/ubuntu/LPMC
